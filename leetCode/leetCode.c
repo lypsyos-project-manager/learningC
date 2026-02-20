@@ -5,7 +5,16 @@
  */
 int* twoSum(int* nums, int numeSize, int target, int* returnSize); // chamada da funcao antes para o programa saber que existe
 int main(){
-    int meusNumeros[] = {2, 7, 11, 15};
+    int vetorTam = 0;
+    
+
+    printf("Quantos n° vai conter a lista? ");
+    scanf("%d" ,&vetorTam);
+    int* meusNumeros = (int*)malloc(vetorTam * sizeof(int));
+    for (int i = 0; i<vetorTam; i++){
+        printf("Digite um Numero: ");
+        scanf("%d", &meusNumeros[i]);
+    }
 
     int tamanho = sizeof(meusNumeros) / sizeof(meusNumeros[0]);
 
@@ -22,11 +31,11 @@ int main(){
     return 0;
 
 }
-int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
+int* twoSum(int* nums, int vetorTam, int target, int* returnSize) {
     int* result = (int*)malloc(2*sizeof(int));
 
-    for (int i = 0; i < numsSize; i++){
-        for (int j = i + 1; j< numsSize; j++){
+    for (int i = 0; i < vetorTam; i++){
+        for (int j = i + 1; j< vetorTam; j++){
 
             if (nums[i] + nums[j] == target){
 
